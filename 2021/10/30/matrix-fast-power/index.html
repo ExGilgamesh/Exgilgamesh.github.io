@@ -57,83 +57,81 @@ con,">
         <div class="content markdown">
             <h1 id="矩阵快速幂加速递推"><a class="markdownIt-Anchor" href="#矩阵快速幂加速递推"></a> 矩阵快速幂加速递推</h1>
 <p>来自本人luogu的blog搬运</p>
-<pre class="highlight"><code class="c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
-<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">100</span>, maxm = <span class="hljs-number">100</span>;
-<span class="hljs-keyword">int</span> i, j, mod;
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">matrix</span>
-&#123;</span>
-  <span class="hljs-keyword">int</span> n, m;
+<pre><code class="highlight c"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">define</span> ll long long</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+<span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">100</span>, maxm = <span class="number">100</span>;
+<span class="keyword">int</span> i, j, mod;
+<span class="class"><span class="keyword">struct</span> <span class="title">matrix</span></span>
+<span class="class">&#123;</span>
+  <span class="keyword">int</span> n, m;
   ll s[maxn][maxm];
   matrix()
   &#123;
     clean();
   &#125;
-  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">clean</span><span class="hljs-params">()</span>
-  </span>&#123;
+  <span class="function"><span class="keyword">void</span> <span class="title">clean</span><span class="params">()</span></span>
+<span class="function">  </span>&#123;
     n = maxn, m = maxm;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
-      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++)
-        s[i][j] = <span class="hljs-number">0</span>;
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)
+      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)
+        s[i][j] = <span class="number">0</span>;
   &#125;                                  
-&#125; A, F0;                             <span class="hljs-comment">//F0为初始矩阵，A为构造出的矩阵</span>
-<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ss[maxn];                  
-matrix <span class="hljs-keyword">operator</span>*(matrix a, matrix b) <span class="hljs-comment">//重载*运算符</span>
+&#125; A, F0;                             <span class="comment">//F0为初始矩阵，A为构造出的矩阵</span>
+<span class="keyword">long</span> <span class="keyword">long</span> ss[maxn];                  
+matrix <span class="keyword">operator</span>*(matrix a, matrix b) <span class="comment">//重载*运算符</span>
 &#123;
   matrix c;
-  <span class="hljs-keyword">if</span> (a.m != b.n)
-    <span class="hljs-keyword">return</span> c;
+  <span class="keyword">if</span> (a.m != b.n)
+    <span class="keyword">return</span> c;
   c.n = a.n, c.m = a.m;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; c.m; j++)
+  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; c.m; j++)
   &#123;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; c.n; i++)
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.n; i++)
       ss[i] = b.s[i][j];
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; c.n; i++)
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.n; i++)
     &#123;
-      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; a.m; k++)
+      <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; a.m; k++)
         c.s[i][j] += a.s[i][k] * ss[k];
       c.s[i][j] %= mod;
     &#125;
   &#125;
-  <span class="hljs-keyword">return</span> c;
+  <span class="keyword">return</span> c;
 &#125;
-<span class="hljs-function">matrix <span class="hljs-title">pow</span><span class="hljs-params">(matrix a, <span class="hljs-keyword">int</span> b)</span>
-</span>&#123;
+<span class="function">matrix <span class="title">pow</span><span class="params">(matrix a, <span class="keyword">int</span> b)</span></span>
+<span class="function"></span>&#123;
   matrix ans;
   ans.n = a.n, ans.m = a.m;
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a.n; i++)
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; a.m; j++)
-      ans.s[i][j] = (i == j); <span class="hljs-comment">//构造单位矩阵</span>
-  <span class="hljs-keyword">while</span> (b)
+  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.n; i++)
+    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a.m; j++)
+      ans.s[i][j] = (i == j); <span class="comment">//构造单位矩阵</span>
+  <span class="keyword">while</span> (b)
   &#123;
-    <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>)
+    <span class="keyword">if</span> (b &amp; <span class="number">1</span>)
       ans = ans * a;
     a = a * a;
-    b = b &gt;&gt; <span class="hljs-number">1</span>;
+    b = b &gt;&gt; <span class="number">1</span>;
   &#125;
-  <span class="hljs-keyword">return</span> ans;
+  <span class="keyword">return</span> ans;
 &#125;
-<span class="hljs-keyword">int</span> n, k = <span class="hljs-number">2</span>; <span class="hljs-comment">//k为初始值个数，根据需要取</span>
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
-</span>&#123;
-  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; k; i++)
-    <span class="hljs-built_in">cin</span> &gt;&gt; A.s[<span class="hljs-number">0</span>][i];
-  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; k; i++)
-    A.s[i][i - <span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;
-  <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; k; i++)
-    <span class="hljs-built_in">cin</span> &gt;&gt; F0.s[k - i - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>];
-  <span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; mod;
-  A.m = A.n = k, F0.m = <span class="hljs-number">1</span>, F0.n = k;
-  <span class="hljs-keyword">if</span> (n &lt; k)
+<span class="keyword">int</span> n, k = <span class="number">2</span>; <span class="comment">//k为初始值个数，根据需要取</span>
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>&#123;
+  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; k; i++)
+    <span class="built_in">cin</span> &gt;&gt; A.s[<span class="number">0</span>][i];
+  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; k; i++)
+    A.s[i][i - <span class="number">1</span>] = <span class="number">1</span>;
+  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; k; i++)
+    <span class="built_in">cin</span> &gt;&gt; F0.s[k - i - <span class="number">1</span>][<span class="number">0</span>];
+  <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; mod;
+  A.m = A.n = k, F0.m = <span class="number">1</span>, F0.n = k;
+  <span class="keyword">if</span> (n &lt; k)
   &#123;
-    <span class="hljs-built_in">cout</span> &lt;&lt; F0.s[k - n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="built_in">cout</span> &lt;&lt; F0.s[k - n - <span class="number">1</span>][<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;
+    <span class="keyword">return</span> <span class="number">0</span>;
   &#125;
-  <span class="hljs-built_in">cout</span> &lt;&lt; (<span class="hljs-built_in">pow</span>(A, n - k) * F0).s[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]; 
-&#125;
-</code></pre>
-
+  <span class="built_in">cout</span> &lt;&lt; (<span class="built_in">pow</span>(A, n - k) * F0).s[<span class="number">0</span>][<span class="number">0</span>]; 
+&#125;</code></pre>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
