@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>清风十里不如你</title>
-    <url>/2021/10/30/%E6%B8%85%E9%A3%8E%E5%8D%81%E9%87%8C/</url>
-    <content><![CDATA[<p>Dust to dust,ash to ash</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>退役感想</title>
-    <url>/2021/11/21/%E9%80%80%E5%BD%B9%E6%84%9F%E6%83%B3/</url>
-    <content><![CDATA[<p>仔细算来OI生涯也有5年了，昨天算是结束了。从初一的什么都不会的蒟蒻变成了什么都不会的咸鱼，我似乎是学了什么东西，又似乎什么也没学。但是回头看看，身边的人换了一批又一批，活到现在也许是艰难的吧。曾经无数次的爆0，是任何一个OI选手逃不开的，其实前几次的选拔之后，身边的人就所剩无几了。或是不感兴趣，或是没有时间，大家都找着合适的理由离开了。</p>
-<p>信竞对我来说，也许是初中那一点点美好的时光给我留下的最后的东西了。曾经稚嫩的笔记，丢了无数个的U盘，还有一声声关于妹子的自嘲，曾经那个整天喊着妹子妹子，却孑然一身的人，许是没有改变吧，不知怎地，大家都是ACG爱好者，甚至心理测试的结果都是INTP，一群志同道合，不怎么听老师话的朋友，随着最后一次比赛的结束都要各奔东西了。</p>
-<p>SCY，JLB虽然在初中没有见过你们，但是早有听说。JLB的题都做了几套了，DFSlover的名号，随着杭四中luogu团队的彻底荒废失传，到时又有谁在意团队的管理员到底是谁呢？DST外号信奥班大班长，他人在学军，却无私地对杭四提供支持，贡献了近期的数据，还有一套题。还有今年缺席的叶宝以及俊哥，大家都很想你们。</p>
-<p>我变了许多，不像以前有洞察力了，2018，T3众所周知的摆渡车，我跳过了，T4，我打的是正解，可是我当时不会hash，当时已经算是较好的发挥了。而现在看题，总是没有想法和思路了，不知为何。</p>
-<p>我受了许多打击，无论是初三的比赛，去年的初赛，还是今年的退役赛，都没有什么好结果。三位一体是我最讨厌的事情，而NOIP的唯一作用就是它，我也许是迷失了自我吧，再也找不回初二那种来玩玩的心态。付出了挺多的，尤其是高中之前的暑假，五年OI一场空的结局谁也不想看到吧。一鼓作气，再而衰，三而竭，高一的初赛对我的打击是致命的，怀疑颓废无奈失望涌向了我的全身，彻底击垮了吧。</p>
-<p>这次比赛，唯二的缺憾，就是T1的时间浪费，以及，HYP初二竟然给我详细证明过T3的一些结论，而我在赛场毫无头绪，东拼西凑终究是没有抓住本质。但是，比完了，反而我没有想象中的伤心，没有那种一生的遗憾的感觉，反而是很轻松，我看到了自己真正的内心，我还是因为喜欢这门竞赛才学的，以后也一定会打ACM，不久就是另一段旅途了，并不是我曾经想的误入歧途。</p>
-<p>我记得这个秋日运动会最后的晚阳，橙红色的日光穿过绮丽的云洒在信息楼的走廊，轻轻地吻了这里的孩子，耳语着：神的光芒终究会指引旅行者，前路的方向。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>matrix_fast_power</title>
     <url>/2021/10/30/matrix-fast-power/</url>
     <content><![CDATA[<h1 id="矩阵快速幂加速递推"><a class="markdownIt-Anchor" href="#矩阵快速幂加速递推"></a> 矩阵快速幂加速递推</h1>
@@ -98,5 +80,11 @@ matrix <span class="token function">pow</span><span class="token punctuation">(<
   <span class="token punctuation">&#125;</span>
   cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token function">pow</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> n <span class="token operator">-</span> k<span class="token punctuation">)</span> <span class="token operator">*</span> F0<span class="token punctuation">)</span><span class="token punctuation">.</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>清风十里不如你</title>
+    <url>/2021/10/30/%E6%B8%85%E9%A3%8E%E5%8D%81%E9%87%8C/</url>
+    <content><![CDATA[<p>Dust to dust,ash to ash</p>
+]]></content>
   </entry>
 </search>
