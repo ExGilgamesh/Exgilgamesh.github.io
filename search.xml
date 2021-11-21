@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>清风十里不如你</title>
+    <url>/2021/10/30/%E6%B8%85%E9%A3%8E%E5%8D%81%E9%87%8C/</url>
+    <content><![CDATA[<p>Dust to dust,ash to ash</p>
+]]></content>
+  </entry>
+  <entry>
     <title>matrix_fast_power</title>
     <url>/2021/10/30/matrix-fast-power/</url>
     <content><![CDATA[<h1 id="矩阵快速幂加速递推"><a class="markdownIt-Anchor" href="#矩阵快速幂加速递推"></a> 矩阵快速幂加速递推</h1>
@@ -80,11 +86,5 @@ matrix <span class="token function">pow</span><span class="token punctuation">(<
   <span class="token punctuation">&#125;</span>
   cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token function">pow</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> n <span class="token operator">-</span> k<span class="token punctuation">)</span> <span class="token operator">*</span> F0<span class="token punctuation">)</span><span class="token punctuation">.</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-  </entry>
-  <entry>
-    <title>清风十里不如你</title>
-    <url>/2019/01/01/%E6%98%A5%E9%A3%8E%E5%8D%81%E9%87%8C/</url>
-    <content><![CDATA[<p>Dust to dust,ash to ash</p>
-]]></content>
   </entry>
 </search>
